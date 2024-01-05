@@ -1,9 +1,9 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import './App.css';
-import Todo from './component/todo/todo';
+// import Todo from './component/todo/todo';
 import Main from './component/Main/Main';
 import Model from './component/Model/Model';
-
+import Todo from './component/Todo/Todo'
 function App() {
 
   // function for timestamp generation for todos
@@ -15,15 +15,6 @@ function App() {
 
   //localStorage to useState with this
   let storeItems = JSON.parse(localStorage.getItem('items')) || [];
-
-  // Handle local Storage 
-
-  useEffect(() => {
-
-    localStorage.setItem('items', JSON.stringify(todoItems));
-
-  }, [todoItems])
-
 
   const handleKey = (event) => {
     const key = event.key;
@@ -125,6 +116,15 @@ function App() {
       />
     ));
   }, [todoItems]);
+
+  
+  // Handle local Storage 
+
+  useEffect(() => {
+
+    localStorage.setItem('items', JSON.stringify(todoItems));
+
+  }, [todoItems])
 
   return (
     <>
