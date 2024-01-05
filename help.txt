@@ -1,0 +1,31 @@
+Why we Use some things and some explanations 
+
+
+import React, { useMemo } from 'react';
+
+const contentList = useMemo(() => {
+        // function 
+    }, [/* Dependencies Array */]);
+
+Why Use useMemo:
+
+1.   Performance Optimization:
+
+Without useMemo, the mapping operation would occur on every render, even if todoItems hasn't changed. This could lead to unnecessary re-renders.
+useMemo ensures that the mapping only occurs when todoItems changes, optimizing performance.
+
+2.   Memoization:
+
+It memoizes the result of the computation, meaning it stores the result and returns the stored result if the dependencies haven't changed.
+This can be particularly beneficial when dealing with computationally expensive operations.
+
+3.   Dependency Array:
+
+The second argument (dependency array) ensures that the computation is recalculated only when the specified dependencies change.
+Using useMemo is a way to optimize and improve the performance of your React components, especially when dealing with complex computations or rendering large lists.
+
+
+
+
+
+
